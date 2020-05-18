@@ -1,0 +1,16 @@
+<!-- <pre *ngIf="auth.userProfile$ | async as profile">
+<code>{{ profile | json }}</code>
+</pre> -->
+
+<div class="pt-5">
+  <img class="img-fluid" [src]="profileModel.picture" alt="user image" />
+</div>
+
+<div class="display-grid">
+  <div>First Name:</div><div>{{profileModel.firstName}}</div>
+  <div *ngIf="profileModel.middleName!==null">Middle Name:</div><div
+    *ngIf="profileModel.middleName!==null">{{profileModel.middleName}}</div>
+  <div>Last Name:</div><div>{{profileModel.lastName}}</div>
+  <div>Email:</div><div>{{profileModel.email}}</div>
+  <div>Email Verified:</div><div>{{profileModel.email_verified}}</div>
+</div>
