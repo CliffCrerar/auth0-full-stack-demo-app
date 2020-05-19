@@ -3,7 +3,7 @@ import { HttpTransportService } from "../_services/http-transport.service";
 import { ExpressHttpResponseModel } from "../models/http-responose.model";
 import { Subscription } from "rxjs";
 import { ProductRowsModel } from "../models/product-row.model";
-import { ProductModel } from "src/app/model/products.model";
+import { ProductModel } from "src/app/models/products.model";
 
 @Component({
 	selector: "app-products",

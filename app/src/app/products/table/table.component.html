@@ -8,7 +8,8 @@
 	<div
 		*ngFor="let product of productsList"
 		class="product-card p-3 d-flex flex-column position-relative"
-		[routerLink]="['/','products','single-view',product._id]">
+		[routerLink]="['/','products','single-view',product._id]"
+		[queryParams]="{id:product._id}">
 		<div
 			class="card-img"
 			style="background-image: url({{product.img}}); height: 30rem; width: 100%;">
