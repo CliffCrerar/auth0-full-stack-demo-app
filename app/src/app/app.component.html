@@ -5,10 +5,13 @@
 
 
 
-<main class="container">
+<main class="container position-relative">
   <h1 id="title">Ng Auth Demo</h1>
   <hr>
   <router-outlet></router-outlet>
+  <div class="w-100 position-absolute overlay text-center" *ngIf="showLoading">
+    <img class="img-fluid" src="../assets/loading.gif" alt="loading-img" />
+  </div>
 </main>
 
 <footer class="">
