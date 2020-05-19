@@ -1,6 +1,14 @@
 {
     "cSpell.words": [
+        "hdrs",
         "jwks"
     ],
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "editor.wrappingIndent": "same",
+    "html.format.wrapAttributes": "force-expand-multiline",
+    "html.format.wrapLineLength": 0,
+    "angular-template-formatter.closeTagSameLine": true,
+    "angular-template-formatter.indentWidth": 4,
+    "angular-template-formatter.useSpaces": false,
+    "typescript.implementationsCodeLens.enabled": true
 }

@@ -5,14 +5,14 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppRoutingModule } from '../app-routing.module';
 
 describe('AuthService', () => {
-  let service: AuthService;
+	let service: AuthService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AuthService);
-  });
+	beforeEach(() => {
+		TestBed.configureTestingModule({});
+		service = TestBed.inject(AuthService);
+	});
 
-  xit('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+	xit('should be created', () => {
+		expect(service).toBeTruthy();
+	});
 });

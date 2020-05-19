@@ -1,0 +1,23 @@
+<div class="text-center">
+	<h3>
+		Viewing {{productsList.length}} products
+	</h3>
+</div>
+
+<div class="display-grid position-relative">
+	<div
+		*ngFor="let product of productsList"
+		class="product-card p-3 d-flex flex-column position-relative"
+		[routerLink]="['/','products','single-view',product._id]">
+		<div
+			class="card-img"
+			style="background-image: url({{product.img}}); height: 30rem; width: 100%;">
+		</div>
+
+		<div class="text-center">
+			<h6>{{product.title}}</h6>
+			<small class="text-center">{{product._id}}</small>
+		</div>
+
+	</div>
+</div>

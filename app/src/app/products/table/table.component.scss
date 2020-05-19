@@ -1,0 +1,39 @@
+.display-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 3rem 3rem;
+	position: relative;
+	justify-content: space-evenly;
+}
+
+.product-card {
+	max-width: 300px;
+	border: 2px solid transparent;
+	border-radius: 7px;
+	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4), 0px 0px 4px 0px rgba(0, 0, 0, 0.4);
+	img {
+		border-radius: 7px;
+	}
+	.btn-and-text {
+		align-self: flex-end;
+	}
+	&:hover {
+		border: 2px solid blue;
+	}
+	.card-img {
+		background-size: auto 30rem !important;
+		background-attachment: center !important;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.display-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.display-grid {
+		grid-template-columns: auto;
+	}
+}

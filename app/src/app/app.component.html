@@ -1,22 +1,24 @@
-
 <nav>
-  <app-nav-bar></app-nav-bar>
+	<app-nav-bar></app-nav-bar>
 </nav>
 
-
-
 <main class="container position-relative">
-  <h1 id="title">{{title}}</h1>
-  <hr>
-  <router-outlet></router-outlet>
-  <div class="w-100 position-absolute overlay text-center" *ngIf="showLoading">
-    <img class="img-fluid" src="../assets/loading.gif" alt="loading-img" />
-  </div>
+	<h1 id="title">{{title}}</h1>
+	<hr>
+	<router-outlet></router-outlet>
+	<div
+		class="w-100 position-absolute overlay text-center"
+		*ngIf="showLoading">
+		<img
+			class="img-fluid"
+			src="../assets/loading.gif"
+			alt="loading-img">
+	</div>
 </main>
 
-<footer class="">
-  <hr>
-  <div class="p-2">
-    <div class="text-center">Json Api Demo Assignment</div>
-  </div>
+<footer class>
+	<hr>
+	<div class="p-2">
+		<div class="text-center">Json Api Demo Assignment</div>
+	</div>
 </footer>

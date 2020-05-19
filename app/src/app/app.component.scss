@@ -1,23 +1,23 @@
 :host {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  flex: 1;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	flex: 1;
 }
 main {
-  flex: 1 !important;
+	flex: 1 !important;
 }
 
 footer {
-  width: 100vw;
-  bottom: 0;
+	width: 100vw;
+	bottom: 0;
 }
 
 .overlay {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: white;
-  z-index: 100;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: white;
+	z-index: 100;
 }

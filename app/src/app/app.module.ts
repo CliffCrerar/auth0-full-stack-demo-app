@@ -10,28 +10,34 @@ import { ProductsComponent } from './products/products.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InterceptorService } from './_services/interceptor.service';
 import { LogoutComponent } from './logout/logout.component';
-import {AuthComponentLogo} from 'src/app/generic/auth0-logo.component';
+import { AuthComponentLogo } from 'src/app/generic/auth0-logo.component';
+import { TableComponent } from './products/table/table.component';
+import { FormComponent } from './products/form/form.component';
+import { SingleViewComponent } from './products/single-view/single-view.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-    ProfileComponent,
-    HomeComponent,
-    ProductsComponent,
-    LogoutComponent,
-    AuthComponentLogo
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: InterceptorService,
-    multi: true
-  }],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		NavBarComponent,
+		ProfileComponent,
+		HomeComponent,
+		ProductsComponent,
+		LogoutComponent,
+		AuthComponentLogo,
+		TableComponent,
+		FormComponent,
+		SingleViewComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule
+	],
+	providers: [{
+		provide: HTTP_INTERCEPTORS,
+		useClass: InterceptorService,
+		multi: true
+	}],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
