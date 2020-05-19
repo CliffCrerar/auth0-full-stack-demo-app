@@ -4,5 +4,6 @@ import authConf from '../../../auth.conf.json';
 export const environment = {
   production: true,
   domain: authConf.DOMAIN,
-  clientId: authConf.CLIENT_ID
+  clientId: authConf.FE_CLIENT_ID,
+  audience: authConf.AUDIENCE
 };

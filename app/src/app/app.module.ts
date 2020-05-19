@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InterceptorService } from './_services/interceptor.service';
+import { LogoutComponent } from './logout/logout.component';
+import {AuthComponentLogo} from 'src/app/generic/auth0-logo.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { InterceptorService } from './_services/interceptor.service';
     NavBarComponent,
     ProfileComponent,
     HomeComponent,
-    ProductsComponent
+    ProductsComponent,
+    LogoutComponent,
+    AuthComponentLogo
   ],
   imports: [
     BrowserModule,

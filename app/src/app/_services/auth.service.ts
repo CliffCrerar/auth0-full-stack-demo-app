@@ -4,7 +4,7 @@ import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
 import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from 'rxjs';
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,8 @@ export class AuthService {
     createAuth0Client({
       domain: environment.domain,
       client_id: environment.clientId,
-      redirect_uri: `${window.location.origin}`
+      redirect_uri: `${window.location.origin}`,
+      audience: environment.audience
     })
   ).pipe(
     shareReplay(1),
@@ -88,7 +89,7 @@ export class AuthService {
     this.auth0Client$.subscribe((client: Auth0Client) => {
       client.logout({
         client_id: environment.clientId,
-        returnTo: `${window.location.origin}`
+        returnTo: `${window.location.origin}/logout`
       });
     });
   }

@@ -7,7 +7,8 @@ import authConf from '../../../auth.conf.json';
 export const environment = {
   production: false,
   domain: authConf.DOMAIN,
-  clientId: authConf.CLIENT_ID
+  clientId: authConf.FE_CLIENT_ID,
+  audience: authConf.AUDIENCE
 };
 
 /*
@@ -18,3 +19,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+

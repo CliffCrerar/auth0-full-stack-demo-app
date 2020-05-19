@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpTransportService} from '../_services/http-transport.service';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  public SectionState: 'List' | 'Edit';
+  constructor(private http: HttpTransportService) {
+    this.SectionState = 'List';
+  }
+
+  set sectionState(newState: string) {
+    this.sectionState = newState;
+  }
 
   ngOnInit(): void {
+    this.http.retrieveProducts().subscribe((payload) => {
+      console.log('payload: ', payload);
+
+    }, (error) => {
+      console.log('error: ', error);
+
+    });
   }
 
 }
