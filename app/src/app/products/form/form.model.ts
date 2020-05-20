@@ -1,11 +1,12 @@
 
-class AddEditForm {
+export class AddEditForm {
 	private _id: string; // the id
 	private _title: string;
 	private _url: string;
 	private _maker: string;
 	private _img: string;
 	private _description: string;
+	private _user: string;
 
 	constructor() { }
 
@@ -26,4 +27,7 @@ class AddEditForm {
 
 	get description(): string { return this._description; }
 	set description(p: string) { this._description = p; }
+
+	get user(): string { return this._user; }
+	set user(p: string) { this._user = p; }
 }

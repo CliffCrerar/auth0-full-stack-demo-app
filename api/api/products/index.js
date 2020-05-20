@@ -3,7 +3,8 @@ const
     Products = require('../db').Products,
     Responder = require('../res'),
     createError = require('http-errors'),
-    responder = new Responder();
+    responder = new Responder(),
+bodyParser = require('body-parser');
 
 /**
  * @description for retrieving all docs or one doc
@@ -48,11 +49,22 @@ function retrieveOneProduct(req, res) {
     }
 }
 
-function create_products() {
-    console.log(Products);
+/**
+ * @description Create new products
+ */
+function create_products(req,res) {
+    
+    
+    console.log('req.body: ', req);
+    res.status(200).send({method: 'testing'})
+
 }
 
-function update_products() {
+/**
+ * @description Update product on edit
+ */
+function update_products(req, res) {
+    res.status(200).send({method: put})
 
 }
 

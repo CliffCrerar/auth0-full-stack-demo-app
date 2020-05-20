@@ -1,10 +1,43 @@
-.form-buttons{
+@mixin flexi {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	align-items: center;
 }
 
+input{
+	width: 100%;
+	&:textarea{
+		width: 100%;
+	}
+}
 
-.form-container{
-	@extend .form-buttons
+.form-buttons {
+	width: 100%;
+
+	.form-button {
+		border: 1px transparent !important;
+		width: 100%;
+		&:first-child {
+			background: rgb(02, 255, 202) !important;
+			color: rgb(0, 78, 0) !important;
+		}
+		&:last-child {
+			background: rgb(255, 242, 171) !important;
+			color: rgb(126, 124, 0) !important;
+		}
+	}
+}
+
+.form-container {
+	@include flexi;
+justify-content: space-around;
+}
+
+.form-image {
+	height: 300px;
+	width: 300px;
+	background-size: contain;
+	align-self: center;
+	justify-self: center;
 }

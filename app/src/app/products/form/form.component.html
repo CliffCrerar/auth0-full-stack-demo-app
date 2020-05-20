@@ -1,11 +1,14 @@
-<div class="form-container">
-	<div>
-		<form
-			#AddEditForm
-			(submit)="submitForm()"
-			NgForm>
+<form
+	id="addEditForm"
+	(reset)="setUser()"
+	#AddEditForm="ngForm"
+	(ngSubmit)="onSubmitForm(AddEditForm)">
+	<div class="form-container">
+		<div>
+
 			<label for="_id">Retailer:</label>
 			<input
+				[(ngModel)]="model.retailer"
 				required
 				type="text"
 				name="_id"
@@ -13,6 +16,7 @@
 
 			<label for="maker">Owner Name:</label>
 			<input
+				[(ngModel)]="model.maker"
 				required
 				type="text"
 				name="maker"
@@ -20,6 +24,7 @@
 
 			<label for="title">Title:</label>
 			<input
+				[(ngModel)]="model.title"
 				required
 				type="text"
 				name="title"
@@ -27,6 +32,7 @@
 
 			<label for="description">Product Description</label>
 			<textarea
+				[(ngModel)]="model.description"
 				required
 				type="text"
 				name="description"
@@ -35,6 +41,7 @@
 
 			<label for="img">Image Url</label>
 			<input
+				[(ngModel)]="model.img"
 				required
 				type="text"
 				name="img"
@@ -42,26 +49,45 @@
 
 			<label>Social Media</label>
 			<input
+				[(ngModel)]=model.url
 				required
-				type=text
+				type="text"
 				name="url"
 				placeholder="Social Media">
 			<br>
+			<label for="user">User (Read Only)</label>
+			<input
+				type="text"
+				readonly
+				style="color: grey"
+				name="user"
+				[value]="model.user">
 			<div class="form-buttons">
 				<input
-					type="button"
+
+					class="form-button"
+					type="submit"
 					name="submit"
+					form="addEditForm"
 					value="Save">
 				<input
+					class="form-button"
 					type="reset"
 					name="submit"
 					value="Discard">
 			</div>
-		</form>
-	</div>
-	<div>
-		<div [style]="backgroundImage">
-			<img class="img-fluid" [src]="" [alt]=""/>
 		</div>
+		<div>
+			<div
+				class="form-image"
+				style="{{backgroundImage}}">
+				<img
+					class="img-fluid"
+					[src]="model.img"
+					[alt]>
+			</div>
+
+		</div>
+
 	</div>
-</div>
+</form>

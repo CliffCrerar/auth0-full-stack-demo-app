@@ -8,6 +8,7 @@ export class ProductModel {
 	public title: string;
 	public description: string;
 	public _rev: string;
+	public user: string;
 	constructor({ _id, maker, url, title, _rev, img, description}) {
 		this._id = _id;
 		this.maker = maker;

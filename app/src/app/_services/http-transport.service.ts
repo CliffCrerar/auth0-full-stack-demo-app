@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
-import { HttpHeaders, HttpClient } from "@angular/common/http";
+import { HttpHeaders, HttpClient, HttpRequest } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { ProductModel } from 'src/app/models/products.model';
+import { ExpressHttpResponseModel } from 'src/app/models/http-responose.model';
 
-import { ExpressHttpResponseModel } from "../models/http-responose.model";
 
 @Injectable({
 	providedIn: "root",
@@ -16,19 +17,25 @@ export class HttpTransportService {
 			'application/json;charset=utf8'
 		);
 	}
+	get headers() { return { headers: this._headers }; }
 	/**
 	 * @description Retrieve all documents
 	 */
-	retrieveAllProducts = (): Observable<any> =>
-		this.http.get<ExpressHttpResponseModel>('/api/products', { headers: this._headers, })
+	retrieveAllProducts = (): Observable<ExpressHttpResponseModel> =>
+		this.http.get<ExpressHttpResponseModel>('/api/products', this.headers)
 	/**
 	 * @description Retrieve one document
 	 */
-	retrieveOneProduct = (id: string): Observable<any> =>
-		this.http.get<ExpressHttpResponseModel>(`/api/products?id=${id}`, { headers: this._headers })
+	retrieveOneProduct = (id: string): Observable<ExpressHttpResponseModel> =>
+		this.http.get<ExpressHttpResponseModel>(`/api/products?id=${id}`, this.headers)
 	/**
 	 * @description Delete document per ID
 	 */
-	deleteProductPerId = (id: string): Observable<any> =>
-		this.http.delete(`/api/products?id=${id}`, { headers: this._headers })
+	deleteProductPerId = (id: string): Observable<object> =>
+		this.http.delete(`/api/products?id=${id}`, this.headers)
+	/**
+	 * @description Add new document
+	 */
+	createNewProduct = (body: ProductModel): Observable<object> =>
+		this.http.post(`/api/products/`, body, this.headers)
 }
