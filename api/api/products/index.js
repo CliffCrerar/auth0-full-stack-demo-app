@@ -1,11 +1,10 @@
-
+/**
+ * @description Database per service layer
+ */
 const
     Products = require('../db').Products,
     Responder = require('../res'),
-    createError = require('http-errors'),
-    responder = new Responder(),
-bodyParser = require('body-parser');
-
+    responder = new Responder();
 /**
  * @description for retrieving all docs or one doc
  */
@@ -23,7 +22,7 @@ function retrieveAllProducts(req, res) {
             docs.table = 'Products';
             docs.retrieved = new Date();
             responder.ok(docs, req, res);
-        }).catch(err => { throw new Error(err) });
+        }).catch(err => { throw new Error(err) })//.finally(() => close());
     } catch (err) {
         return responder.error(500, err, req, res);
     }
@@ -36,45 +35,65 @@ function retrieveOneProduct(req, res) {
         return Products.get(req.query.id, { include_docs: true })
             .then(doc => {
                 responder.ok({
-                    table: 'Product',retrieved: new Date(),
+                    table: 'Product', retrieved: new Date(),
                     rows: [{ id: doc._id, key: doc._id, value: { _rev: doc._rev }, doc }]
                 }, req, res);
             })
             .catch(err => {
-                if (err.status === 404) {throw responder.error(404, err, req, res)}
+                if (err.status === 404) { throw responder.error(404, err, req, res) }
                 throw responder.error(520, err, req, res);
-            })
+            })//.finally(() => close());
     } catch (err) {
         return responder.error(500, err, req, res);
     }
 }
-
 /**
- * @description Create new products
+ * @description Create new or update products (C,U in one function depending on record existence)
  */
-function create_products(req,res) {
-    
-    
-    console.log('req.body: ', req);
-    res.status(200).send({method: 'testing'})
-
+function create_products(req, res) {
+    // console.log('req.body: ', req.body);
+    // res.status(200).send({ method: 'testing' })
+    try {
+        return Products.get(req.body._id).then(doc => {
+            req.body._rev = doc._rev; // record exist update revision code
+            Products.put(req.body)
+                .then(updateResult => responder.ok(updateResult, req, res))
+                .catch(updateError => responder.error(501, updateError, req, res))
+                //.finally(() => close())
+        })
+            .catch(err => {
+                if (err.status === 404) Products.put(req.body)
+                    .then(insertResult => responder.ok(insertResult, req, res))
+                    .catch(insertErr => responder.error(500, insertErr, req, res))
+                    // .finally(() => close());
+                else throw new Error('Da Fudge!')
+            })
+            //.finally(() => console.log('CREATE INSERT : UPSERT : FINAL FINALLY'))
+    } catch (err) {
+        return responder.error(418, err, req, res)
+    }
 }
-
 /**
- * @description Update product on edit
+ * @description Delete products
  */
-function update_products(req, res) {
-    res.status(200).send({method: put})
-
-}
-
 function delete_products(req, res) {
-    res.send(req.query)
+    // res.send(req.query)
     Products.get(req.query.id).then(doc => {
-        return Products.remove(doc).then(result => result);
-    }).then(result => {
-        responder.ok(result, req, res);
-    }).catch(err=>responder.error(500,err,req,res))
+        console.log('doc: ', doc);
+        return Products.remove(doc).then(result => responder.ok(result, req, res));
+    })
+        .then(result => {
+            console.log('result: ', result);
+            responder.ok(result, req, res);
+        })
+        .catch(err => responder.error(500, err, req, res))
 }
-
+/**
+ * @description Function is provisioned but unused.
+ */
+function close() {
+    return Products.close()
+        .then(() => console.log('->> Closing Pouchdb'))
+        .catch((err) => console.error('->< ERROR Closing Pouchdb', err))
+}
 module.exports = { retrieve_products, create_products, update_products, delete_products }

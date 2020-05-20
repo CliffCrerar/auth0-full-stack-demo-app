@@ -1,12 +1,12 @@
-import { Injectable } from "@angular/core";
-import { HttpHeaders, HttpClient, HttpRequest } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpHeaders, HttpClient, HttpRequest } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { ProductModel } from 'src/app/models/products.model';
-import { ExpressHttpResponseModel } from 'src/app/models/http-responose.model';
+import { ExpressHttpResponseModel } from 'src/app/models/http-response.model';
 
 
 @Injectable({
-	providedIn: "root",
+	providedIn: 'root',
 })
 export class HttpTransportService {
 	private _headers: HttpHeaders;
@@ -14,7 +14,7 @@ export class HttpTransportService {
 		this._headers = new HttpHeaders();
 		this._headers = this._headers.append(
 			'Content-Type',
-			'application/json;charset=utf8'
+			'application/json'
 		);
 	}
 	get headers() { return { headers: this._headers }; }

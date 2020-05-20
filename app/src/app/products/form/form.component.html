@@ -11,6 +11,7 @@
 				[(ngModel)]="model.retailer"
 				required
 				type="text"
+				validate
 				name="_id"
 				placeholder="Enter retailer name">
 
@@ -61,10 +62,10 @@
 				readonly
 				style="color: grey"
 				name="user"
+				validate
 				[value]="model.user">
 			<div class="form-buttons">
 				<input
-
 					class="form-button"
 					type="submit"
 					name="submit"

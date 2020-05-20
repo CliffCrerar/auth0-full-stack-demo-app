@@ -1,17 +1,33 @@
 <header>
-  <div class="nav-controls">
-    <div>
+	<div class="nav-controls">
+		<div>
 
-      <button routerLink="/">home</button>
-      <button routerLink="profile" *ngIf="auth.loggedIn">Profile</button>
-      <button routerLink="products" *ngIf="auth.loggedIn">Products</button>
-    </div>
-    <div>
-      <button class="button-primary" (click)="auth.login()"
-        *ngIf="!auth.loggedIn">Log In</button>
-      <button class="button-primary" (click)="auth.logout()"
-        *ngIf="auth.loggedIn">Log Out</button>
-    </div>
-  </div>
-  <hr>
+			<button [routerLink]="['/']">home</button>
+			<button
+				[routerLink]="['/','profile']"
+				*ngIf="auth.loggedIn">
+				Profile
+			</button>
+			<button
+				[routerLink]="['/','products']"
+				*ngIf="auth.loggedIn">
+				Products
+			</button>
+		</div>
+		<div>
+			<button
+				class="button-primary"
+				(click)="auth.login()"
+				*ngIf="!auth.loggedIn">
+				Log In
+			</button>
+			<button
+				class="button-primary"
+				(click)="auth.logout()"
+				*ngIf="auth.loggedIn">
+				Log Out
+			</button>
+		</div>
+	</div>
+	<hr>
 </header>

@@ -9,12 +9,12 @@ import { SingleViewComponent } from 'src/app/products/single-view/single-view.co
 import { FormComponent } from './products/form/form.component';
 
 const routes: Routes = [
-	{ path: '', component: HomeComponent },
-	{ path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
-	{ path: 'products/single-view/:id', component: SingleViewComponent, canActivate: [AuthGuard] },
-	{ path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-	{ path: 'products/form/new', component: FormComponent, canActivate: [AuthGuard] },
-	{ path: 'products/form/edit/:id', component: FormComponent, canActivate: [AuthGuard] },
+	{ path: '', component: HomeComponent, pathMatch: 'full' },
+	{ path: 'products', component: ProductsComponent, canActivate: [AuthGuard], pathMatch: 'full' },
+	{ path: 'products/single-view/:id', component: SingleViewComponent, canActivate: [AuthGuard], pathMatch: 'full' },
+	{ path: 'profile', component: ProfileComponent, canActivate: [AuthGuard], pathMatch: 'full'},
+	{ path: 'products/form/:newOrEdit', component: FormComponent, canActivate: [AuthGuard], pathMatch: 'full'},
+	{ path: 'products/form/:newOrEdit/:id', component: FormComponent, canActivate: [AuthGuard], pathMatch: 'full'},
 	{ path: 'logout', component: LogoutComponent }
 ];
 

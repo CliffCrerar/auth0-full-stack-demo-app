@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpTransportService } from 'src/app/_services/http-transport.service';
-import { ExpressHttpResponseModel } from 'src/app/models/http-responose.model';
+import { ExpressHttpResponseModel } from 'src/app/models/http-response.model';
 import { Subscription } from 'rxjs';
 import { ProductModel } from 'src/app/models/products.model';
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpTransportService } from '../../_services/http-transport.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
-import { ExpressHttpResponseModel } from '../../models/http-responose.model';
+import { ExpressHttpResponseModel } from '../../models/http-response.model';
 import { ProductModel } from 'src/app/models/products.model';
 import { Location } from '@angular/common';
 import { Route } from '@angular/compiler/src/core';
