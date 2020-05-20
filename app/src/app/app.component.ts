@@ -22,17 +22,17 @@ export class AppComponent implements OnInit {
 		);
 
 		this.urlHeadingMap = {
-			"/": "Home",
-			"/profile": "Profile",
-			"/logout": "Logged Out",
-			"/products": "Products",
-			"/products/single-view": "",
-		};
-	}
+			'/': 'Home',
+			'/profile': 'Profile',
+			'/logout': 'Logged Out',
+			'/products': 'Products',
+			'/products/single-view/[\s\S]{ 1,}': 'Product View',
+	};
+}
 
-	ngOnInit() {
-		this._routeSubscription = this._router.events.subscribe((payload) => {
-			this.title = this.urlHeadingMap[this._router.url];
-		});
-	}
+ngOnInit() {
+	this._routeSubscription = this._router.events.subscribe((payload) => {
+		this.title = this.urlHeadingMap[this._router.url];
+	});
+}
 }

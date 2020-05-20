@@ -1,4 +1,44 @@
-<p>single-view works!</p>
 
+<div *ngIf="singleDoc" class="single-view-container text-left m-auto">
 
-<div>{{id}}</div>
+	<h5 class="card mb-4 p-2 text-center">{{singleDoc.title}}</h5>
+	<div class="card-flex">
+
+		<div class="card mr-4">
+			<img
+				class="img-fluid"
+				[src]="singleDoc.img"
+				[alt]="singleDoc.title">
+		</div>
+
+		<div class="card pr-4 p-2">
+			<h5 class="m-0 text-center">{{singleDoc._id}}</h5>
+			<hr>
+			<p>Description:</p>
+			<div>{{singleDoc.description}}</div>
+			<p>Maker:</p>
+			<a
+				[href]="singleDoc.url"
+				target="_blank">
+				{{singleDoc.maker}}
+			</a>
+		</div>
+
+	</div>
+
+	<div class="buttons">
+
+		<div>
+			<button (click)="goBack()" class="button-primary">&#8617;Back</button>
+		</div>
+
+		<div>
+			<button class="mr-4" [routerLink]="['/','products','form','new']">&#43;Add New</button>
+			<button class="mr-4" [routerLink]="['/','products','form','edit',singleDoc._id]">&#9998;Edit</button>
+			<button (click)="onDeleteClick(singleDoc._id)">&#8722;Delete</button>
+		</div>
+
+	</div>
+
+</div>
+

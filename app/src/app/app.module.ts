@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { AuthComponentLogo } from 'src/app/generic/auth0-logo.component';
 import { TableComponent } from './products/table/table.component';
 import { FormComponent } from './products/form/form.component';
 import { SingleViewComponent } from './products/single-view/single-view.component';
+import { MobileNavComponent } from './generic/mobile-nav.component';
 
 @NgModule({
 	declarations: [
@@ -26,12 +28,15 @@ import { SingleViewComponent } from './products/single-view/single-view.componen
 		AuthComponentLogo,
 		TableComponent,
 		FormComponent,
-		SingleViewComponent
+		SingleViewComponent,
+		MobileNavComponent
 	],
 	imports: [
-		BrowserModule,
+
+	BrowserModule,
 		AppRoutingModule,
-		HttpClientModule
+		HttpClientModule,
+		FormsModule
 	],
 	providers: [{
 		provide: HTTP_INTERCEPTORS,

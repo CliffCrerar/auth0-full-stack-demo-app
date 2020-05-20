@@ -1,0 +1,24 @@
+@import '../../../styles.scss';
+
+.single-view-container{
+	max-width: 900px !important;
+}
+
+.card{
+	@include cardStd;
+	p{
+		margin: 10px 0 10px 0;
+		font-weight: 900;
+	}
+}
+
+.card-flex{
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.buttons{
+	margin-top: 20px;
+	@extend .card-flex
+}

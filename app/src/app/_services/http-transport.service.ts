@@ -16,17 +16,19 @@ export class HttpTransportService {
 			'application/json;charset=utf8'
 		);
 	}
-
-	retrieveAllProducts(): Observable<any> {
-		return this.http.get<ExpressHttpResponseModel>('/api/products', {
-			headers: this._headers,
-		});
-	}
-
-	retrieveOneProduct(id: string): Observable<any> {
-		return this.http.get<ExpressHttpResponseModel>(
-			`/api/products?id=${id}`,
-			{ headers: this._headers }
-		);
-	}
+	/**
+	 * @description Retrieve all documents
+	 */
+	retrieveAllProducts = (): Observable<any> =>
+		this.http.get<ExpressHttpResponseModel>('/api/products', { headers: this._headers, })
+	/**
+	 * @description Retrieve one document
+	 */
+	retrieveOneProduct = (id: string): Observable<any> =>
+		this.http.get<ExpressHttpResponseModel>(`/api/products?id=${id}`, { headers: this._headers })
+	/**
+	 * @description Delete document per ID
+	 */
+	deleteProductPerId = (id: string): Observable<any> =>
+		this.http.delete(`/api/products?id=${id}`, { headers: this._headers })
 }

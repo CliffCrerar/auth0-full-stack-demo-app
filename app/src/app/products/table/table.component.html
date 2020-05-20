@@ -1,7 +1,10 @@
 <div class="text-center">
-	<h3>
-		Viewing {{productsList.length}} products
-	</h3>
+	<h3 *ngIf="!productsList;else retrievedData"></h3>
+	<ng-template #retrievedData>
+		<h3>
+			Viewing {{productsList.length}} products
+		</h3>
+	</ng-template>
 </div>
 
 <div class="display-grid position-relative">
