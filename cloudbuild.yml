@@ -4,11 +4,7 @@ substitutions:
     _PROJECT_ID: 'infinity-arc'
 
 steps:
-  - name: 'ubuntu'
-    args: ['mkdir','/usr/src/si-demo']
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    args: ['gsutil','cp','gs://infinity-arc_cloudbuild/auth-secret/auth.conf.json','/usr/src/si-demo/auth.conf.json']
-  - name: 'us.gcr.io/infinity-arc/si-demo-template'
+  - name: 'us.gcr.io/infinity-arc/docker'
     args: ['build', '-t', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME', '.']
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run', 'deploy', '$_SERVICE_NAME', '--image', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated','--cpu','1','--memory','128']
