@@ -1,1 +1,5 @@
-app/node_modules
+node_modules
+./api/src/app
+./api/src/docs
+./docs/dist
+./app/dist

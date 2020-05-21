@@ -6,17 +6,19 @@ const
   auth0MiddleWare = require('express').Router(),
   jwt = require('express-jwt'),
   { SecretCallbackLong } = require('express-jwt'),
-  { expressJwtSecret } = require('jwks-rsa');
+  { expressJwtSecret } = require('jwks-rsa'),
+  path = require('path'),
+  fs = require('fs');
 
 let conf;
 conf = require('../../../auth.conf.json')
-// if (process.env.NODE_ENV === 'development') {
-//   conf = require('../../../auth.conf.json')
-// } else {
-//   const ALGORITHM = ['RS256']
-//   const { AUDIENCE, JWKSURI, ISSUER } = process.env
-//   conf = { AUDIENCE, JWKSURI, ISSUER, ALGORITHM }
-// }
+if (fs.existsSync(path.join(__dirname, '../../../','auth.conf.json'))) {
+  conf = require('../../../auth.conf.json')
+} else {
+  const ALGORITHM = ['RS256']
+  const { AUDIENCE, JWKSURI, ISSUER } = process.env
+  conf = { AUDIENCE, JWKSURI, ISSUER, ALGORITHM }
+}
 // Builder pattern class
 class JwtCheckBuilder {
   constructor() {

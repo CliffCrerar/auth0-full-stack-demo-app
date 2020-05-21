@@ -37,3 +37,61 @@ Both parts of the app use a common secrets file named `auth.conf.json` that hold
 ## Data utilities
 
 The application uses a collection level document database as its data repository and it has been baked into the express server as middel-ware. The data client runs on port `5984` on the same origin as the express server. It uses leveldb and saves the data from its `tables` as files on the host drive inside the project.
+
+## CI/CD
+
+### Containerization
+
+The application builds with a customer container that has globally pre-installed `grunt-cli`, `@angular/cli` and `vuepress`. 
+
+### Testing
+
+This project does not yet have testing running. In production TDD is should be non-negotiable.
+
+### Build process
+
+The build process is handled with `grunt`. See the simple `gruntfile.js` below.
+
+```js
+const grunt = require('grunt');
+const path = require('path');
+
+function options(p = '') {
+    return { execOptions: { cwd: path.join(__dirname, p) } }
+}
+
+grunt.initConfig({
+    shell: {
+        options: { stderr: false },
+        installApi: {
+            command: 'npm install',
+            options: options('api'),
+        },
+        buildApp: {
+            command: 'npm install; npm run build',
+            options: options('app'),
+        },
+        buildDocs: {
+            command: 'npm install; npm run docs:build',
+            options: options(),
+        },
+        copyApp: {
+            command: 'mv ./app/dist/products-app ./api/src/app',
+            options: options(),
+        },
+        copyDocs: {
+            command: 'mv ./docs/.vuepress/dist ./api/src/docs',
+            options: options(),
+        }
+    }
+});
+
+grunt.loadNpmTasks('grunt-shell');
+grunt.registerTask('default', ['shell']);
+```
+
+# Build in GCP Cloud build service
+
+The container is deployed to google cloud build by run of the `npm run gcloud:build`. This uses a the config `cloudbuild.yml`. The command attached to the `npm` script is the same as push command to `docker hub` except that it publishes to a container registry in the private project.
+
+# Deploy with google cloud run

@@ -15,13 +15,12 @@ module.exports = {
             './*.md' // Relative path usage
         ],
         nav: [
-            { text: '&#10094; Back to App', link: '/', target: '_blank' },
+            { text: '⭐Back to App', link: '/', target: '_blank' },
             {
                 text: 'Requirements', link:'/requirements/'
             },
             {
                 text: 'Config',
-                
                 link: '/configuration/'
             },
             {   
@@ -29,7 +28,7 @@ module.exports = {
                 link:'/application/',
             },
             {
-                text: 'API',
+                text: 'JSON API',
                 link: '/api/'
             },
             {
