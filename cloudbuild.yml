@@ -4,9 +4,9 @@ substitutions:
     _PROJECT_ID: 'infinity-arc'
 
 steps:
-  - name: 'make directory'
+  - name: 'gcr.io/cloud-builders/docker'
     args: ['mkdir','/usr/src/si-demo']
-  - name: 'copy auth secrets'
+  - name: 'gcr.io/cloud-builders/docker'
     args: ['cp','gs://infinity-arc_cloudbuild/auth-secret/auth.conf.json','/usr/src/si-demo/auth.conf.json']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME', '.']
