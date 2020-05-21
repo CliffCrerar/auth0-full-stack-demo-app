@@ -20,4 +20,4 @@ jobs:
         env:
           BASE_BRANCH: master
           PULL_REQUEST_DRAFT: true
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
