@@ -96,4 +96,4 @@ function close() {
         .then(() => console.log('->> Closing Pouchdb'))
         .catch((err) => console.error('->< ERROR Closing Pouchdb', err))
 }
-module.exports = { retrieve_products, create_products, update_products, delete_products }
+module.exports = { retrieve_products, create_products, delete_products }

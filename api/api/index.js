@@ -1,6 +1,6 @@
 
 /* Server Api */
-require('./db');
+
 const
   bp = require('body-parser').json(),
   express = require('express'),
@@ -14,14 +14,18 @@ app.all('*/*', (req, res, next) => {
   next();
 });
 
-app.use(jwtCheckMiddleWare);
+app.use('/api', jwtCheckMiddleWare);
 
-app.use(require('./auth/test.js'));
+app.use(require('./auth/_test.js'));
+
+app.use(express.static('../app'));
+
+app.use('/docs', express.static('../docs'));
 
 app.route('/api/products')
   .get(retrieve_products)
   .post(create_products)
-  .put((req, res) => res.status(200).send({ method: 'put' }))
+  // .put((req, res) => res.status(200).send({ method: 'put' }))
   .delete(delete_products)
 
-module.exports = app;
+module.exports = () => app.listen(3000, () => console.log('API Running'));

@@ -1,0 +1,25 @@
+{
+  "name": "express-json-api-with-angular",
+  "version": "1.0.0",
+  "description": "> Application uses `Auth0` as auth provider. Auth0 authenticates from end and provides token to API calls to server. server only accepts valid calls as token is passed with every call by means of HTTP interceptor built into front end application. Server checks every call for token if token is invalid, returns a 401 to front end.",
+  "main": "run.js",
+  "dependencies": {
+    "http-errors": "^1.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CliffCrerar/auth0-full-stack-demo-app.git"
+  },
+  "author": "Cliff Crerar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CliffCrerar/auth0-full-stack-demo-app/issues"
+  },
+  "homepage": "https://github.com/CliffCrerar/auth0-full-stack-demo-app#readme"
+}

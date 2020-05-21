@@ -1,5 +1,5 @@
 const
-    express = require('express'),
+    // express = require('express'),
     pouchdb = require('pouchdb'),
     expressPouchdb = require('express-pouchdb'),
     path = require('path'),
@@ -15,4 +15,3 @@ const Products = new PouchDefaults('products');
 
 module.exports = { exPouch, Products };
 
-express().use(exPouch).listen(5984, () => console.log('DevDbOn'));

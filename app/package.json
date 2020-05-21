@@ -1,6 +1,6 @@
 {
-  "name": "products-app",
-  "version": "0.0.0",
+  "name": "ex-json-api-ng",
+  "version": "0.5.0",
   "type": "module",
   "scripts": {
     "ng": "ng",
@@ -45,5 +45,9 @@
     "ts-node": "~8.3.0",
     "tslint": "^5.18.0",
     "typescript": "~3.7.5"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.",
+  "main": "run.js",
+  "author": "Cliff Crear",
+  "license": "MIT"
 }

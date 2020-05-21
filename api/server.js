@@ -1,4 +1,7 @@
-const app = require('./api');
+const app_server = require('./api');
+const express = require('express');
 
-app.listen(3000, () => console.log('API Running'));
+app_server();
 
+
+express().use(exPouch).listen(5984, () => console.log('DevDbOn'));
