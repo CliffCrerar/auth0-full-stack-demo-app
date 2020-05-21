@@ -12,7 +12,7 @@ const
 
 let conf;
 conf = require('../../../auth.conf.json')
-if (fs.existsSync(path.join(__dirname, '../../../','auth.conf.json'))) {
+if (fs.existsSync(path.join(__dirname, '../../../','path.js'))) {
   conf = require('../../../auth.conf.json')
 } else {
   const ALGORITHM = ['RS256']

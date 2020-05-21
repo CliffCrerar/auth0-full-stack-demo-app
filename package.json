@@ -15,6 +15,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "start": "cd ./api;npm start",
+
     "gcloud:build":"gcloud builds submit --config cloudbuild.yml"
   },
   "repository": {
