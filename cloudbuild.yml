@@ -4,7 +4,7 @@ substitutions:
     _PROJECT_ID: 'infinity-arc'
 
 steps:
-  - name: 'us.gcr.io/infinity-arc/docker'
+  - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME', '.']
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run', 'deploy', '$_SERVICE_NAME', '--image', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated','--cpu','1','--memory','128']
