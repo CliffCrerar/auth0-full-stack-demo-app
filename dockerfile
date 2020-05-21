@@ -6,6 +6,7 @@ FROM cliffenator/node-vuepress-angular:latest
 WORKDIR /usr/src/si-demo
 # Copy files
 COPY . ./
+COPY /usr/src/auth-secret/auth.conf.json /usr/src/si-demo/auth.conf.json
 # Run build
 RUN npm install
 RUN npm run build

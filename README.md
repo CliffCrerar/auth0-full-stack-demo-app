@@ -4,3 +4,5 @@
 
 See the live app: [input url once live]()
 See the docs: [input url once live]()
+
+![CI](https://github.com/CliffCrerar/auth0-full-stack-demo-app/workflows/CI/badge.svg?branch=dev)
