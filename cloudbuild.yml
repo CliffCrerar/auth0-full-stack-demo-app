@@ -12,4 +12,4 @@ steps:
     args: ['build', '-t', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME', '.']
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run', 'deploy', '$_SERVICE_NAME', '--image', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated','--cpu','1','--memory','128']
-  images: ['gcr.io/$_PROJECT_ID/$_SERVICE_NAME']
+images: ['gcr.io/$_PROJECT_ID/$_SERVICE_NAME']
