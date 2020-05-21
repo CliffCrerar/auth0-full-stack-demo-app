@@ -1,0 +1,12 @@
+  
+substitutions:
+    _SERVICE_NAME: 'si-demo'
+    _PROJECT_ID: 'infinity-arc'
+
+steps:
+    - name: 'gcr.io/cloud-builders/new'
+      args:
+          ['build', '-t', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA', '.']
+      # push the container image to Container Registry
+    - name: 'gcr.io/cloud-builders/docker'
+      args: ['push', 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA']

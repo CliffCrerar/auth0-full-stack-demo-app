@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --aot --prod=false --sourceMap",
+    "start": "ng serve --aot --prod=true",
+    "dev": "ng serve --aot --prod=false --sourceMap",
     "build": "ng build --prod=true",
     "test": "ng test",
     "lint": "ng lint",

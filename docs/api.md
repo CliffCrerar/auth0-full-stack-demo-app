@@ -7,6 +7,8 @@ permalink: /api
 
 JSON API created with `Postman`:
 
+Download the file: [JSON Api file](https://cdn-cloudflare/api/si-json-api/index.json)
+
 ```json
 {
 	"info": {

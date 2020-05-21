@@ -1,7 +1,7 @@
 module.exports = {
     title: 'SI App demo',
     description: 'Documentation',
-    base: '/docs',
+    base: '/docs/',
     build: 'dist',
     head: [
         ['link', { rel: 'icon', href:'https://vuepress.vuejs.org/logo.png'}]
@@ -15,7 +15,7 @@ module.exports = {
             './*.md' // Relative path usage
         ],
         nav: [
-            { text: 'Home', link: '/' },
+            { text: 'Docs Home', link: '/', target: '_blank' },
             {
                 text: 'Requirements', link:'/requirements/'
             },

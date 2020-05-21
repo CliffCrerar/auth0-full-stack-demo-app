@@ -1,1 +1,19 @@
-<h3>About this App:</h3>
+<div>
+	<ng-container *ngIf="!auth.loggedIn">
+		<h3>
+			<a
+				href
+				(click)="auth.login()">
+				Please Log in
+			</a>
+		</h3>
+		<small>OR</small>
+	</ng-container>
+	<h5>
+		<a
+			href="/docs"
+			target="_blank">
+			See the Docs
+		</a>
+	</h5>
+</div>

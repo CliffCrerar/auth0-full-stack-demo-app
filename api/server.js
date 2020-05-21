@@ -1,7 +1,9 @@
-const app_server = require('./api');
-const express = require('express');
+const app = require('./src');
+const { fauxtonConsole } = require('./src/db');
 
-app_server();
+const port = process.env.PORT || 3000
+const fauxtonPouchConf = 5984
 
 
-express().use(exPouch).listen(5984, () => console.log('DevDbOn'));
+app.listen(port, () => console.log('API Running'));
+fauxtonConsole.listen(fauxtonPouchConf, () => console.log('DevDbOn'));
