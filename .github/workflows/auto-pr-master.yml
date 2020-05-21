@@ -6,21 +6,18 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ dev ]
+    branches: [dev]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  create_pr:
-      runs-on: ubuntu-latest
-  
-      steps:
-        - name: auto-create-pr-action
-          uses: smartinspereira/auto-create-pr-action@v0.1.0
-          with:
-            env:
-              BASE_BRANCH=master
-              PULL_REQUEST_DRAFT="true"
-              GITHUB_TOKEN:${{ secrets.GH_TOKEN }}
-                  
-            
+  Auto-Create-Pull-Request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: auto-create-pr-action
+        uses: smartinspereira/auto-create-pr-action@v0.1.0
+        env:
+          BASE_BRANCH: master
+          PULL_REQUEST_DRAFT: true
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
