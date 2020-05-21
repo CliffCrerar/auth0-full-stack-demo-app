@@ -94,6 +94,8 @@ grunt.registerTask('default', ['shell']);
 
 ![gcloud-build-image](https://cdn-cloudflare.ga/assets/site-logo/gcloud-build/gcloud-build.jpg)
 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=CliffCrerar_auth0-full-stack-demo-app)
+
 The container is deployed to google cloud build by run of the `npm run gcloud:build`. This uses a the config `cloudbuild.yml`. The command attached to the `npm` script is the same as push command to `docker hub` except that it publishes to a container registry in the private project.
 
 # Deploy with google cloud run
