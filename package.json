@@ -14,7 +14,7 @@
     "build": "grunt",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "start":"cd ./api;npm start"
+    "start": "cd ./api;npm start"
   },
   "repository": {
     "type": "git",

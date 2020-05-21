@@ -22,25 +22,36 @@ app.use('/api', router)
 
 app.use(express.static(join(__dirname, './app')));
 
-app.use('/docs/*', express.static(join(__dirname, './docs')));
+app.use('/docs', express.static(join(__dirname, './docs')));
 
-app.get('/*', (req, res) => {
+app.get('/docs', (req, res) => {
   // res.set('Content-Type', 'text/html');
-  readFile(join(__dirname, 'app', 'dist', 'products-app', 'index.html'), (err, file) => {
-    if (err) {
-      res.status(500).send(err);
-    } else {
-      res.status(200).send(file)
-    }
-  })
+  // readFile(join(__dirname, 'app', 'dist', 'products-app', 'index.html'), (err, file) => {
+  //   if (err) {
+  //     res.status(500).send(err);
+  //   } else {
+  //     res.status(200).send(file)
+  //   }
+  res.status(200).sendFile(join(__dirname, 'docs', 'index.html'))
+
 })
 
-
+app.get('*', (req, res) => {
+  // res.set('Content-Type', 'text/html');
+  // readFile(join(__dirname, 'app', 'dist', 'products-app', 'index.html'), (err, file) => {
+  //   if (err) {
+  //     res.status(500).send(err);
+  //   } else {
+  //     res.status(200).send(file)
+  //   }
+  res.status(200).sendFile(join(__dirname, './app','index.html'))
+  
+})
 
 router.use(bp);
 router.use(auth0MiddleWare);
 router.use('/test', authTest);
-router.route('/api/products')
+router.route('/products')
   .get(crud.retrieve_products)
   .post(crud.create_products)
   .delete(crud.delete_products);

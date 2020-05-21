@@ -46,6 +46,6 @@ testem.log
 Thumbs.db
 auth.conf.json
 
-./api/app
-./api/docs
+./api/src/app
+./api/src/docs
 ./docs/dist

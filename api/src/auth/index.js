@@ -9,14 +9,14 @@ const
   { expressJwtSecret } = require('jwks-rsa');
 
 let conf;
-
-if (process.env.NODE_ENV === 'development') {
-  conf = require('../../../auth.conf.json')
-} else {
-  const ALGORITHM = ['RS256']
-  const { AUDIENCE, JWKSURI, ISSUER } = process.env
-  conf = { AUDIENCE, JWKSURI, ISSUER, ALGORITHM }
-}
+conf = require('../../../auth.conf.json')
+// if (process.env.NODE_ENV === 'development') {
+//   conf = require('../../../auth.conf.json')
+// } else {
+//   const ALGORITHM = ['RS256']
+//   const { AUDIENCE, JWKSURI, ISSUER } = process.env
+//   conf = { AUDIENCE, JWKSURI, ISSUER, ALGORITHM }
+// }
 // Builder pattern class
 class JwtCheckBuilder {
   constructor() {
