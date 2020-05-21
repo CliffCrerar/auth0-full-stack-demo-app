@@ -1,5 +1,5 @@
 
-import authConf from '../../../auth.conf.json';
+import authConf from '../../../path.js';
 
 export const environment = {
 	production: true,
