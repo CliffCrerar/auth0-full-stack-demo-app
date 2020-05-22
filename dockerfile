@@ -7,7 +7,7 @@ WORKDIR /usr/src/si-demo
 # Copy files
 COPY . ./
 # Run build
-RUN echo 'module.exports = require('/usr/src/auth-secret/auth.conf.json')' > path.js;
+RUN echo "module.exports = require('/usr/src/auth-secret/auth.conf')" > path.js;
 RUN npm install
 RUN npm run build
 # Expose port
