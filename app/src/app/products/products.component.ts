@@ -39,7 +39,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 	}
 
 	getRowsFromResponse(responseModel: ExpressHttpResponseModel): void {
-		responseModel.body.rows.map((row) => row.doc);
+		responseModel.body.rows.forEach((row) => row.doc);
 	}
 
 	handleHttpRetrievePayLoad(
