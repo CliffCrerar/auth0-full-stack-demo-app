@@ -1,1 +1,1 @@
-module.exports = require('./auth.conf.json');
+module.exports = require('./auth.conf');
