@@ -7,8 +7,6 @@ permalink: '/configuration'
 
 ## The Code
 
-
-
 ```
 git clone https://github.com/CliffCrerar/auth0-full-stack-demo-app.git
 ```
@@ -92,7 +90,7 @@ grunt.loadNpmTasks('grunt-shell');
 grunt.registerTask('default', ['shell']);
 ```
 
-# Build in GCP Cloud build service
+# GCP Cloud build service
 
 ![gcloud-build-image](https://cdn-cloudflare.ga/assets/site-logo/gcloud-build/gcloud-build.jpg)
 
@@ -101,3 +99,5 @@ grunt.registerTask('default', ['shell']);
 The container is deployed to google cloud build by run of the `npm run gcloud:build`. This uses a the config `cloudbuild.yml`. The command attached to the `npm` script is the same as push command to `docker hub` except that it publishes to a container registry in the private project.
 
 # Deploy with google cloud run
+
+Once the container is built it is deployed to cloud run to run as a cold starting container. In production Google then gradually moves the traffic from an existing release to the new release of your `SaaS`.

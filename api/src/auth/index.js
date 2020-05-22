@@ -8,27 +8,19 @@ const
   { SecretCallbackLong } = require('express-jwt'),
   { expressJwtSecret } = require('jwks-rsa'),
   path = require('path'),
-  fs = require('fs');
+  fs = require('fs'),
+  env = require('../../../auth.conf.json');
 
-let conf;
-conf = require('../../../auth.conf.json')
-if (fs.existsSync(path.join(__dirname, '../../../','path.js'))) {
-  conf = require('../../../auth.conf.json')
-} else {
-  const ALGORITHM = ['RS256']
-  const { AUDIENCE, JWKSURI, ISSUER } = process.env
-  conf = { AUDIENCE, JWKSURI, ISSUER, ALGORITHM }
-}
 // Builder pattern class
 class JwtCheckBuilder {
   constructor() {
     this.cache = true;
     this.rateLimit = true;
     this.jwksRequestsPerMinute = 5;
-    this.jwksUri = conf.JWKSURI;
-    this.audience = conf.AUDIENCE;
-    this.issuer = conf.ISSUER;
-    this.algorithms = conf.ALGORITHM;
+    this.jwksUri = env.JWKSURI;
+    this.audience = env.AUDIENCE;
+    this.issuer = env.ISSUER;
+    this.algorithms = ["RS256"];
     this.secret = this._exSecret({
       cache: this.cache,
       rateLimit: this.rateLimit,
@@ -51,5 +43,3 @@ class JwtCheckBuilder {
 auth0MiddleWare.use(new JwtCheckBuilder().jwtCheck())
 
 module.exports = auth0MiddleWare
-
-

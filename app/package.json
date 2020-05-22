@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --aot --prod=true",
-    "dev": "ng serve --aot --prod=false --sourceMap",
+    "dev": "ng serve --aot --prod=false",
     "build": "ng build --prod=true",
     "test": "ng test",
     "lint": "ng lint",
