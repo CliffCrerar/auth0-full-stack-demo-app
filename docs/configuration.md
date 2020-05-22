@@ -7,6 +7,8 @@ permalink: '/configuration'
 
 ## The Code
 
+
+
 ```
 git clone https://github.com/CliffCrerar/auth0-full-stack-demo-app.git
 ```

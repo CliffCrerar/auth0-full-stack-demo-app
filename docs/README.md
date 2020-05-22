@@ -11,11 +11,12 @@ permalink: '/'
         justify-content: center;
         margin: auto;
     }
+    
     .img-front img{
         height: 100px;
     }
 
-    .img-front p{
+    p{
         text-align: center
     }
 
@@ -28,7 +29,11 @@ permalink: '/'
 </a>
 </div>
 
+
+
 <div class="img-front">
+
+
 
 ![Expressjs](https://cdn-cloudflare.ga/assets/site-logo/expressjs/ExpressJS.png)
 
@@ -39,3 +44,5 @@ permalink: '/'
 ![Pouchdb](https://cdn-cloudflare.ga/assets/site-logo/pouchdb/pouchdb.svg)
 
 </div>
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/dashboard?id=CliffCrerar_auth0-full-stack-demo-app)[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=CliffCrerar_auth0-full-stack-demo-app&metric=sqale_index)](https://sonarcloud.io/dashboard?id=CliffCrerar_auth0-full-stack-demo-app)[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=CliffCrerar_auth0-full-stack-demo-app&metric=ncloc)](https://sonarcloud.io/dashboard?id=CliffCrerar_auth0-full-stack-demo-app)[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=CliffCrerar_auth0-full-stack-demo-app&metric=security_rating)](https://sonarcloud.io/dashboard?id=CliffCrerar_auth0-full-stack-demo-app)[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=CliffCrerar_auth0-full-stack-demo-app&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=CliffCrerar_auth0-full-stack-demo-app)[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=CliffCrerar_auth0-full-stack-demo-app&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=CliffCrerar_auth0-full-stack-demo-app)[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=CliffCrerar_auth0-full-stack-demo-app&metric=bugs)](https://sonarcloud.io/dashboard?id=CliffCrerar_auth0-full-stack-demo-app)[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=CliffCrerar_auth0-full-stack-demo-app&metric=code_smells)](https://sonarcloud.io/dashboard?id=CliffCrerar_auth0-full-stack-demo-app)
