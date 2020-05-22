@@ -1,10 +1,11 @@
 
-import authConf from '../../../path.js';
+// import authConf from '../../../path.js';
+import env from '../../../auth.conf.json';
 
 export const environment = {
 	production: true,
-	domain: authConf.DOMAIN,
-	clientId: authConf.FE_CLIENT_ID,
-	audience: authConf.AUDIENCE,
+	domain: env.DOMAIN,
+	clientId: env.FE_CLIENT_ID,
+	audience: env.AUDIENCE,
 	productsPath: '/api/products'
 };

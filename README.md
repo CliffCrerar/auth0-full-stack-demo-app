@@ -8,3 +8,9 @@ See the live app: [input url once live]()
 See the docs: [input url once live]()
 
 ![Create Auto PR](https://github.com/CliffCrerar/auth0-full-stack-demo-app/workflows/CI/badge.svg?branch=dev)
+
+### [JSON Api Schematic](https://cdn-cloudflare.ga.s3.amazonaws.com/api/si-json-api/index.json)
+
+#### [Check out the live demo](https://si-demo-man-fudcjl2mcq-uc.a.run.app/)
+
+#### [App Documentation](https://si-demo-man-fudcjl2mcq-uc.a.run.app/docs)

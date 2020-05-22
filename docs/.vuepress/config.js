@@ -1,7 +1,7 @@
 module.exports = {
     title: 'SI App demo',
     description: 'Documentation',
-    base: '/docs',
+    base: '/docs/',
     build: 'dist',
     head: [
         ['link', { rel: 'icon', href:'https://vuepress.vuejs.org/logo.png'}]

@@ -1,13 +1,12 @@
 # "Build from node:12-slim image"
 # Container pre installed with grunt angular cli and vuepress
-FROM us.gcr.io/infinity-arc/si-demo-template
+FROM cliffenator/node-vuepres-grunt-angular
 # Environment variables
 # Set working directory
-WORKDIR /usr/src/si-demo
+WORKDIR /usr/src/app
 # Copy files
 COPY . ./
 # Run build
-RUN echo "module.exports = require('/usr/src/auth-secret/auth.conf')" > path.js;
 RUN npm install
 RUN npm run build
 # Expose port

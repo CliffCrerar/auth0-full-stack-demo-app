@@ -49,3 +49,7 @@ auth.conf.json
 ./api/src/app
 ./api/src/docs
 ./docs/dist
+.env
+.env.development
+.env.production
+env.js

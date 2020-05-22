@@ -2,13 +2,13 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import authConf from '../../../path.js';
+import env from '../../../auth.conf.json';
 
 export const environment = {
 	production: false,
-	domain: authConf.DOMAIN,
-	clientId: authConf.FE_CLIENT_ID,
-	audience: authConf.AUDIENCE,
+	domain: env.DOMAIN,
+	clientId: env.FE_CLIENT_ID,
+	audience: env.AUDIENCE,
 	productsPath: '/api/products'
 };
 

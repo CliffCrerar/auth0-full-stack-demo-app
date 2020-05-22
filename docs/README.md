@@ -17,13 +17,13 @@ permalink: '/'
     }
 
     p{
-        text-align: center
+        text-align: justify
     }
 
 </style>
 
 <div style="text-align: center; margin: 20px">
-<a href="/requirements">
+<a href="/docs/requirements/">
 <button 
     style="color: white;padding: 1rem; background: #3FAF7C; font-size: 1em; border-radius: 10px">Get Started </button>
 </a>
