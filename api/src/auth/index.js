@@ -20,7 +20,7 @@ class JwtCheckBuilder {
     this.jwksUri = env.JWKSURI;
     this.audience = env.AUDIENCE;
     this.issuer = env.ISSUER;
-    this.algorithms = env.ALGORITHM;
+    this.algorithms = ["RS256"];
     this.secret = this._exSecret({
       cache: this.cache,
       rateLimit: this.rateLimit,
