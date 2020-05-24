@@ -101,3 +101,7 @@ The container is deployed to google cloud build by run of the `npm run gcloud:bu
 # Deploy with google cloud run
 
 Once the container is built it is deployed to cloud run to run as a cold starting container. In production Google then gradually moves the traffic from an existing release to the new release of your `SaaS`.
+
+# Sonar Cloud
+
+https://github.com/CliffCrerar/auth0-full-stack-demo-app/pull/14#issuecomment-632513792
